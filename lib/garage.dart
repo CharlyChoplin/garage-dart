@@ -2,9 +2,14 @@ import 'voiture.dart';
 
 class CabinetComptable {
   final clients = <Object, int>{};
+  int _tresorerie;
 
   void addClient(Object client) {
     clients[client] = null;
+  }
+
+  void addTresorerie() {
+    this._tresorerie = _tresorerie + 15;
   }
 
   String toString() {
@@ -18,6 +23,8 @@ class Garage {
 
   void nouvellePriseCharge(Vehicule vehicule) {
     _objetsAReparer.add(vehicule);
+    var cabinet = CabinetComptable();
+    cabinet.addTresorerie();
   }
 
   @override

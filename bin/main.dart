@@ -1,5 +1,4 @@
-import 'package:garage_le_retour/voiture.dart';
-import 'package:garage_le_retour/garage.dart';
+import '../lib/garage.dart';
 
 void main(List<String> arguments) {
   var voiture1 = Voiture();
