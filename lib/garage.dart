@@ -1,8 +1,16 @@
 import 'voiture.dart';
 
-class CabinetComptable {
+abstract class Observer{
+
+}
+
+abstract class Observable{
+  final observers = <Observer>[];
+}
+
+class CabinetComptable implements Observer{
   final clients = <Object, int>{};
-  int _tresorerie;
+  int _tresorerie = 0;
 
   void addClient(Object client) {
     clients[client] = null;
@@ -13,18 +21,17 @@ class CabinetComptable {
   }
 
   String toString() {
-    return "clients : $clients";
+    return "clients : $clients , tresorerie : $_tresorerie";
   }
 }
 
-class Garage {
+class Garage implements Observable{
   final _objetsAReparer = <Vehicule>[];
+  final observers = <Observer>[]
   Garage();
 
   void nouvellePriseCharge(Vehicule vehicule) {
     _objetsAReparer.add(vehicule);
-    var cabinet = CabinetComptable();
-    cabinet.addTresorerie();
   }
 
   @override

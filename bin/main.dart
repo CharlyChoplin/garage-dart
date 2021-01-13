@@ -21,6 +21,7 @@ void main(List<String> arguments) {
 
   voiture1.demarrer();
   moto1.mettreLaBequille();
-
+  print(cabinet);
+  
   print('end');
 }
